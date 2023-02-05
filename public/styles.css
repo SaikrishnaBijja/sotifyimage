@@ -2,6 +2,14 @@
   font-family: myFirstFont;
   src: url("Gotham-Spotify-Font/GothamMedium.ttf");
 }
+
+@media print {
+    tr.vendorListHeading {
+/*         background-color: #1a4567 !important; */
+        print-color-adjust: exact; 
+    }
+}
+
 @font-face {
   font-family: myFirstFont2;
   src: url("Gotham-Spotify-Font/GothamLight.ttf");
