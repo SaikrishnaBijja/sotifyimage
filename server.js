@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 app.post("/Generate", upload.single("img"), (req, res) => {
   console.log(imageName)
   var colours = ['']
-  getColors(path.join(__dirname, 'public\\images\\'+imageName+'.jpg')).then(colors => {
+  getColors(path.join(__dirname, 'public/images/'+imageName+'.jpg')).then(colors => {
     var color = Math.floor(Math.random() * colors.length);
     console.log(colors[color].hex())
     res.render("index", {
