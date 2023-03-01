@@ -18,164 +18,35 @@
       font-family: myFirstFont;
     }
   </style>
-  <body onload="hello()" id="p2">
+  <body onload="hello()"  id="p2">
     <div id="mycanvas" class="box">
       <img src="images/<%=pass%>.jpg" alt="" />
-      <div style="margin-left: 10px">
+      <div id="text" style="margin-left: 10px">
         <b><h3 style="margin-bottom: 0"><%=song%></h3></b>
         <p class="artist" style="font-family: myFirstFont"><%=artist%></p>
       </div>
-      <img class="logo" src="images/logo.png" alt="" />
+      <img class="logo" id="myImg" src="images/logo.png" alt="" />
     </div>
-    <button onclick="window.print()">Download</button>
+    <button >Download</button>
+    <label for="check">Black:</label>
+    <input type="checkbox" id="check" onclick="myFunction()" name="txt-black">
+    <p id="myBtn"><%=colors%></p>
     <script type="text/javascript">
       function hello() {
-        var colors = [
-          "3C84AB",
-          "B5F1CC",
-          "E5FDD1",
-          "red",
-          "green",
-          "362FD9",
-          "85CDFD",
-          "6096B4",
-          "93BFCF",
-          "BDCDD6",
-          "A7727D",
-          "698269",
-          "B99B6B",
-          "F1DBBF",
-          "AA5656",
-          "20262E",
-          "913175",
-          "CD5888",
-          "E9E8E8",
-          "D61355",
-          "F94A29",
-          "FCE22A",
-          "30E3DF",
-          "5D3891",
-          "F99417",
-          "F2CD5C",
-          "F2921D",
-          "A61F69",
-          "400E32",
-          "AAE3E2",
-          "D9ACF5",
-          "645CBB",
-          "00425A",
-          "1F8A70",
-          "BFDB38",
-          "FC7300",
-          "93C6E7",
-          "03001C",
-          "301E67",
-          "5B8FB9",
-          "B6EADA",
-          "86A3B8",
-          "E8D2A6",
-          "F48484",
-          "F55050",
-          "7286D3",
-          "8EA7E9",
-          "AACB73",
-          "CDE990",
-          "84D2C5",
-          "E4C988",
-          "C27664",
-          "B05A7A",
-          "567189",
-          "7B8FA1",
-          "CFB997",
-          "FAD6A5",
-          "658864",
-          "B7B78A",
-          "FFEA20",
-          "8DCBE6",
-          "13005A",
-          "00337C",
-          "1C82AD",
-          "03C988",
-          "FF8B13",
-          "F273E6",
-          "CF4DCE",
-          "ABC270",
-          "FEC868",
-          "FDA769",
-          "473C33",
-          "820000",
-          "4E6C50",
-          "0081B4",
-          "EFA3C8",
-          "A75D5D",
-          "D3756B",
-          "F0997D",
-          "FFC3A1",
-          "3D1766",
-          "6F1AB6",
-          "FF0032",
-          "CD0404",
-          "C780FA",
-          "E3ACF9",
-          "FADA9D",
-          "FBF1D3",
-          "39B5E0",
-          "A31ACB",
-          "FF78F0",
-          "EAC7C7",
-          "FF7B54",
-          "FFB26B",
-          "FFD56F",
-          "939B62",
-          "0081C9",
-          "5BC0F8",
-          "86E5FF",
-          "FFC93C",
-          "D7E9B9",
-          "FFFBAC",
-          "FFD495",
-          "FAAB78",
-          "6C00FF",
-          "3C79F5",
-          "2DCDDF",
-          "B5D5C5",
-          "B08BBB",
-          "ECA869",
-          "7B2869",
-          "9D3C72",
-          "C85C8E",
-          "58287F",
-          "89C4E1",
-          "579BB1",
-          "FFB100",
-          "FBC252",
-          "A3BB98",
-          "3C6255",
-          "243763",
-          "FF6E31",
-          "AD8E70",
-          "FD8A8A",
-          "9EA1D4",
-          "3A4F7A",
-          "E98EAD",
-          "F56EB3",
-          "CB1C8D",
-          "7F167F",
-          "460C68",
-          "A0C3D2",
-          "3C4048",
-          "001253",
-          "404258",
-          "50577A",
-          "432C7A",
-          "393E46",
-          "FFADBC",
-          "222222",
-          "285430",
-        ];
-        var color = Math.floor(Math.random() * colors.length);
-        document.body.style.backgroundColor = "#" + colors[color];
+        let text = document.getElementById("myBtn").innerText;
+        document.body.style.backgroundColor = text;
       }
+      function myFunction() {
+        var checkBox = document.getElementById("check");
+        var text = document.getElementById("text");
+      if (checkBox.checked == true){
+        text.style.color = "black";
+        document.getElementById("myImg").src = "images/logo2.png";
+      } else{
+        text.style.color = "white";
+        document.getElementById("myImg").src = "images/logo.png";
+      }
+}
     </script>
   </body>
 </html>
